@@ -64,9 +64,6 @@ namespace Manager
 
                 mainBook.Save();
 
-                mainBook.Close();
-                paternBook.Close();
-
                 return true;
             }
             catch (Exception)
@@ -74,6 +71,11 @@ namespace Manager
                 /// Возврат Error Message во View
                 /// 
                 return false;
+            }
+            finally 
+            {
+                mainBook?.Close();
+                paternBook?.Close();
             }
         }
 
@@ -102,14 +104,17 @@ namespace Manager
 
                 mainBook.Save();
 
-                mainBook.Close();
-                comparedBook.Close();
             }
             catch (Exception ex)
             {
                 /// Возврат Error Message во View
                 /// 
                 throw new Exception(ex.Message);
+            }
+            finally 
+            {
+                mainBook?.Close();
+                comparedBook?.Close();
             }
         }
 
