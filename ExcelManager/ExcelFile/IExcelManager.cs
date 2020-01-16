@@ -25,10 +25,10 @@ namespace Manager
         bool Copy(string where, string from, int indexSheet = 1);
 
         /// <summary>
-        /// Сранивает два в указанных файлах Excel
+        /// Сравнивает два в указанных файлах Excel
         /// </summary>
         /// <param name="mainObj">Файл в котором по итогу выполянея будет записат результат в виде нового WorkSheet</param>
         /// <param name="comparedObj"></param>
-        void Compare(ExcelWork mainObj, ExcelWork comparedObj);
+        void Compare(ExcelWork mainObj, int mainRowIndex, ExcelWork comparedObj, int comparedRowIndex);
     }
 }

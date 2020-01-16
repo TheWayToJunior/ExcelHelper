@@ -81,7 +81,7 @@ namespace Manager
 
         private static int startColumnIndex = 2;
 
-        public void Compare(ExcelWork mainObj, ExcelWork comparedObj)
+        public void Compare(ExcelWork mainObj, int mainRowIndex, ExcelWork comparedObj, int comparedRowIndex)
         {
             Excel.Workbook comparedBook = null;
 
@@ -94,11 +94,11 @@ namespace Manager
 
                 newSheet = mainBook.Worksheets[1];
 
-                WorkBookManager(mainBook, mainObj, 4);
+                WorkBookManager(mainBook, mainObj, mainRowIndex);
 
                 comparedBook = excelApp.Workbooks.Open(comparedObj.FileName);
 
-                WorkBookManager(comparedBook, comparedObj, 6);
+                WorkBookManager(comparedBook, comparedObj, comparedRowIndex);
 
                 startColumnIndex++;
 

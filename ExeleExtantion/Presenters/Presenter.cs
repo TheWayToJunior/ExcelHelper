@@ -137,7 +137,7 @@ namespace ExcelExtantion.Presenters
                         Column = item.Cells["Range2"].Value.ToString()
                     };
 
-                    excelManager.Compare(workModel.FirstFile, workModel.SecondFile);
+                    excelManager.Compare(workModel.FirstFile, 4, workModel.SecondFile, 6);
 
                     /// Добавление объекта в список для дальнейшей сериализации 
                     workModels.Add(workModel);
