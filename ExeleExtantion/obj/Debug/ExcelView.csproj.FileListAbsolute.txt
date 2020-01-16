@@ -1,0 +1,16 @@
+D:\С#\Учеба\ExeleExtantion\ExeleExtantion\bin\Debug\ExcelExtantion.exe.config
+D:\С#\Учеба\ExeleExtantion\ExeleExtantion\bin\Debug\ExcelExtantion.exe
+D:\С#\Учеба\ExeleExtantion\ExeleExtantion\bin\Debug\ExcelExtantion.pdb
+D:\С#\Учеба\ExeleExtantion\ExeleExtantion\bin\Debug\ExcelManager.dll
+D:\С#\Учеба\ExeleExtantion\ExeleExtantion\bin\Debug\ExcelManager.pdb
+D:\С#\Учеба\ExeleExtantion\ExeleExtantion\obj\Debug\ExcelView.csprojAssemblyReference.cache
+D:\С#\Учеба\ExeleExtantion\ExeleExtantion\obj\Debug\ExcelExtantion.Properties.Resources.resources
+D:\С#\Учеба\ExeleExtantion\ExeleExtantion\obj\Debug\ExcelView.csproj.GenerateResource.cache
+D:\С#\Учеба\ExeleExtantion\ExeleExtantion\obj\Debug\ExcelView.csproj.CopyComplete
+D:\С#\Учеба\ExeleExtantion\ExeleExtantion\obj\Debug\ExcelExtantion.exe
+D:\С#\Учеба\ExeleExtantion\ExeleExtantion\obj\Debug\ExcelExtantion.pdb
+D:\С#\Учеба\ExeleExtantion\ExeleExtantion\obj\Debug\ExcelExtantion.MainForm.resources
+D:\С#\Учеба\ExeleExtantion\ExeleExtantion\obj\Debug\ExcelExtantion.UserControls.UcFile.resources
+D:\С#\Учеба\ExeleExtantion\ExeleExtantion\obj\Debug\ExcelExtantion.UserControls.UcMain.resources
+D:\С#\Учеба\ExeleExtantion\ExeleExtantion\obj\Debug\ExcelExtantion.UserControls.UcOptions.resources
+D:\С#\Учеба\ExeleExtantion\ExeleExtantion\obj\Debug\ExcelExtantion.UserControls.Controls.Uploader.resources

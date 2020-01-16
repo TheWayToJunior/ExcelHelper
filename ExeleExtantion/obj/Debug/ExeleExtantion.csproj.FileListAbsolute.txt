@@ -1,0 +1,8 @@
+D:\С#\Учеба\ExeleExtantion\ExeleExtantion\obj\Debug\ExeleExtantion.csprojAssemblyReference.cache
+D:\С#\Учеба\ExeleExtantion\ExeleExtantion\obj\Debug\ExeleExtantion.csproj.GenerateResource.cache
+D:\С#\Учеба\ExeleExtantion\ExeleExtantion\obj\Debug\ExcelExtantion.Properties.Resources.resources
+D:\С#\Учеба\ExeleExtantion\ExeleExtantion\bin\Debug\ExcelExtantion.exe.config
+D:\С#\Учеба\ExeleExtantion\ExeleExtantion\bin\Debug\ExcelExtantion.exe
+D:\С#\Учеба\ExeleExtantion\ExeleExtantion\bin\Debug\ExcelExtantion.pdb
+D:\С#\Учеба\ExeleExtantion\ExeleExtantion\obj\Debug\ExcelExtantion.exe
+D:\С#\Учеба\ExeleExtantion\ExeleExtantion\obj\Debug\ExcelExtantion.pdb

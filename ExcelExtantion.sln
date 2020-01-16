@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29609.76
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelView", "ExeleExtantion\ExcelView.csproj", "{F19EDFBC-B9A3-4BDD-9D65-A8BB0136815B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelManager", "ExcelManager\ExcelManager.csproj", "{8A7EE3C0-243A-4C57-9606-2FAA8FCFD0D6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F19EDFBC-B9A3-4BDD-9D65-A8BB0136815B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F19EDFBC-B9A3-4BDD-9D65-A8BB0136815B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F19EDFBC-B9A3-4BDD-9D65-A8BB0136815B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F19EDFBC-B9A3-4BDD-9D65-A8BB0136815B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A7EE3C0-243A-4C57-9606-2FAA8FCFD0D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A7EE3C0-243A-4C57-9606-2FAA8FCFD0D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A7EE3C0-243A-4C57-9606-2FAA8FCFD0D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A7EE3C0-243A-4C57-9606-2FAA8FCFD0D6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4D1ED878-B560-4BE6-B8AC-DB143BB42888}
+	EndGlobalSection
+EndGlobal

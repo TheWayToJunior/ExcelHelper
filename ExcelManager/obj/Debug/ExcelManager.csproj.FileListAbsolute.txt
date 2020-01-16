@@ -1,0 +1,5 @@
+D:\С#\Учеба\ExeleExtantion\ExcelManager\bin\Debug\ExcelManager.dll
+D:\С#\Учеба\ExeleExtantion\ExcelManager\bin\Debug\ExcelManager.pdb
+D:\С#\Учеба\ExeleExtantion\ExcelManager\obj\Debug\ExcelManager.csprojAssemblyReference.cache
+D:\С#\Учеба\ExeleExtantion\ExcelManager\obj\Debug\ExcelManager.dll
+D:\С#\Учеба\ExeleExtantion\ExcelManager\obj\Debug\ExcelManager.pdb
