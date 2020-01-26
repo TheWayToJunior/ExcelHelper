@@ -14,20 +14,20 @@ namespace ExcelExtantion.Presenters
 
         private readonly UserControls.UserControls userControls;
 
-        private Manager.IExcelManager excelManager;
+        private Manager.IExcelManager excelManager { get; set; }
 
-        private ExcelResponseModel excelResponse;
+        private ExcelResponseModel excelResponse { get; set; }
 
-        private string datalFileName;
+        private FormsSerializer<List<ExcelWorkModel>> formsSerializer { get; set; }
 
         private List<ExcelWorkModel> workModels = null;
 
-        public Presenter(MainForm form)
+         public Presenter(MainForm form)
         {
-            datalFileName = AppDomain.CurrentDomain.BaseDirectory + @"\data.xml";
+            formsSerializer = new FormsSerializer<List<ExcelWorkModel>>(AppDomain.CurrentDomain.BaseDirectory + @"\data.xml");
 
             view = form;
-
+            
             userControls = new UserControls.UserControls()
             {
                 File = new UserControls.UcFile(),
@@ -57,7 +57,7 @@ namespace ExcelExtantion.Presenters
         /// </summary>
         private void File_CompleteEvent(string path1, string path2)
         {
-            this.excelManager = new Manager.ExcelManager();
+            this.excelManager = new Manager.ExcelManager(userControls.Options.SavePath, $"Сверка_{DateTime.Now.ToShortDateString()}.xlsx");
 
             try
             {
@@ -68,8 +68,8 @@ namespace ExcelExtantion.Presenters
                     SecondFile = excelManager.GetNameWorkSheets(path2)
                 };
 
-                if (File.Exists(datalFileName))
-                    userControls.Main.AddDataRows(Deserialize()); /// Получение сериализованных данных 
+                if (File.Exists(formsSerializer.Path))
+                    userControls.Main.AddDataRows(formsSerializer.Deserialize(view.ShowMessageError)); /// Получение сериализованных данных 
 
                 view.AddControlsToPanel(userControls.Main);
 
@@ -91,7 +91,7 @@ namespace ExcelExtantion.Presenters
         /// </summary>
         private void Main_CompleteEvent(DataGridViewRowCollection collection)
         {
-            var checkCopy = excelManager.Copy(AppDomain.CurrentDomain.BaseDirectory + "\\Temp.xlsx", excelResponse.FirstFile.FileName);
+            var checkCopy = excelManager.Copy(AppDomain.CurrentDomain.BaseDirectory + "Temp.xlsx", excelResponse.FirstFile.FileName);
 
             if (!checkCopy)
             {
@@ -137,13 +137,13 @@ namespace ExcelExtantion.Presenters
                         Column = item.Cells["Range2"].Value.ToString()
                     };
 
-                    excelManager.Compare(workModel.FirstFile, 4, workModel.SecondFile, 6);
+                    excelManager.Compare(workModel.FirstFile, 4, workModel.SecondFile, 5);
 
                     /// Добавление объекта в список для дальнейшей сериализации 
                     workModels.Add(workModel);
                 }
 
-                Serialize();
+                formsSerializer.Serialize(workModels);
             }
             catch (Exception ex)
             {
@@ -154,44 +154,6 @@ namespace ExcelExtantion.Presenters
                 ((IDisposable)excelManager).Dispose();
             }
 
-        }
-
-        private void Serialize()
-        {
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<ExcelWorkModel>));
-
-            using (FileStream fs = new FileStream(datalFileName, FileMode.OpenOrCreate))
-            {
-                try
-                {
-                    xmlSerializer.Serialize(fs, workModels);
-                }
-                catch (Exception ex)
-                {
-                    view.ShowMessageError(ex.Message);
-                }
-            }
-        }
-
-        private List<ExcelWorkModel> Deserialize()
-        {
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<ExcelWorkModel>));
-
-            using (FileStream fs = new FileStream(datalFileName, FileMode.Open))
-            {
-                var list = new List<ExcelWorkModel>();
-
-                try
-                {
-                    list = (List<ExcelWorkModel>)xmlSerializer.Deserialize(fs);
-                }
-                catch (Exception ex)
-                {
-                    view.ShowMessageError(ex.Message);
-                }
-
-                return list;
-            }
         }
     }
 }

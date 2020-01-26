@@ -10,14 +10,18 @@ namespace Manager
 {
     public class ExcelManager : IExcelManager, IDisposable
     {
+        public string SavePath { get; set; }
+
         private Excel.Application excelApp;
 
-        private Excel.Workbook mainBook;
+        private Excel.Workbook resultBook;
 
-        private Excel.Worksheet newSheet;
+        private Excel.Worksheet resultSheet;
 
-        public ExcelManager()
+        public ExcelManager(string savePath, string name)
         {
+            this.SavePath = savePath + name;
+
             excelApp = new Excel.Application();
         }
 
@@ -54,15 +58,13 @@ namespace Manager
 
             try
             {
-                if (IsOpened(from))
-                    throw new Exception("Файл " + from + "уже открыт!");
-
-                mainBook = excelApp.Workbooks.Open(from);
+                resultBook = excelApp.Workbooks.Add();
+                resultBook.SaveAs(SavePath);
 
                 paternBook = excelApp.Workbooks.Open(where);
-                (paternBook.Worksheets[1] as Excel.Worksheet).Copy(Before: mainBook.Worksheets[indexSheet]);
+                (paternBook.Worksheets[1] as Excel.Worksheet).Copy(Before: resultBook.Worksheets[indexSheet]);
 
-                mainBook.Save();
+                resultBook.Save();
 
                 return true;
             }
@@ -74,36 +76,26 @@ namespace Manager
             }
             finally 
             {
-                mainBook?.Close();
+                resultBook?.Close();
                 paternBook?.Close();
             }
         }
 
         private static int startColumnIndex = 2;
 
-        public void Compare(ExcelWork mainObj, int mainRowIndex, ExcelWork comparedObj, int comparedRowIndex)
+        public void Compare(ExcelWork firstObj, int firstRowIndex, ExcelWork secondObj, int secondRowIndex)
         {
-            Excel.Workbook comparedBook = null;
-
             try
             {
-                if (IsOpened(mainObj.FileName))
-                    throw new Exception("Файл " + mainObj.FileName + "уже открыт!");
+                resultBook = excelApp.Workbooks.Open(SavePath);
+                resultSheet = resultBook.Worksheets[1];
 
-                mainBook = excelApp.Workbooks.Open(mainObj.FileName);
-
-                newSheet = mainBook.Worksheets[1];
-
-                WorkBookManager(mainBook, mainObj, mainRowIndex);
-
-                comparedBook = excelApp.Workbooks.Open(comparedObj.FileName);
-
-                WorkBookManager(comparedBook, comparedObj, comparedRowIndex);
+                WorkBookManager(firstObj, firstRowIndex);
+                WorkBookManager(secondObj, secondRowIndex);
 
                 startColumnIndex++;
 
-                mainBook.Save();
-
+                resultBook.Save();
             }
             catch (Exception ex)
             {
@@ -113,19 +105,36 @@ namespace Manager
             }
             finally 
             {
-                mainBook?.Close();
-                comparedBook?.Close();
+                resultBook?.Close();
             }
         }
 
-        private void WorkBookManager(Excel.Workbook workBook, ExcelWork arg, int rowIndex)
+        private void WorkBookManager(ExcelWork arg, int rowIndex)
         {
-            /// Получение нужной страницы
-            var workSheet = (Excel.Worksheet)workBook.Worksheets[arg.WorkSheet];
+            Excel.Workbook comparedBook = null;
 
-            dynamic value = ReadSheet(workSheet, arg.Column);
+            try
+            {
+                comparedBook = excelApp.Workbooks.Open(arg.FileName);
 
-            WriteToNewSheet(value, rowIndex);
+                /// Получение нужной страницы
+                var workSheet = (Excel.Worksheet)comparedBook.Worksheets[arg.WorkSheet];
+
+                dynamic value = ReadSheet(workSheet, arg.Column);
+
+                WriteToNewSheet(value, rowIndex);
+
+            }
+            catch (Exception ex)
+            {
+                /// Возврат Error Message во View
+                /// 
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                comparedBook?.Close();
+            }
         }
 
         private dynamic ReadSheet(Excel.Worksheet workSheet, string column) => /// Чтение данных
@@ -134,10 +143,10 @@ namespace Manager
 
         private void WriteToNewSheet(dynamic value, int rowIndex, Color? colorColumn = null)
         {
-            if (newSheet == null)
+            if (resultSheet == null)
                 throw new NullReferenceException("newSheet is null");
 
-            newSheet.Cells[rowIndex, startColumnIndex].Value2 = value;
+            resultSheet.Cells[rowIndex, startColumnIndex].Value2 = value;
         }
 
         private IEnumerable CastToDateTime(IEnumerable collection)

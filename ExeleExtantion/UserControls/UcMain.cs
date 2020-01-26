@@ -22,28 +22,41 @@ namespace ExcelExtantion.UserControls
             btnDeleteRows.Click += (s, e) => dgvMain.Rows.Remove(dgvMain.SelectedRows[dgvMain.SelectedRows.Count - 1]);
 
             btnNext.Click += BtnNext_Click;
+
         }
 
         public void AddDataRows(List<ExcelWorkModel> models)
         {
+            dgvMain.Rows.Clear();
+
             foreach (var item in models)
             {
                 int index = dgvMain.Rows.Add();
 
+                AddNameSheet(index);
+
+                /// Заполнение первой части таблицы
                 dgvMain.Rows[index].Cells["NameColumn1"].Value = item.FirstFile.Name;
 
                 dgvMain.Rows[index].Cells["Range1"].Value = item.FirstFile.Column;
 
-                dgvMain.Rows[index].Cells["NameTable1"].Value = item.FirstFile.WorkSheet;
+                /// Перед добавление проводится проверка есть ли это имя в коллекции 
+                dgvMain.Rows[index].Cells["NameTable1"].Value = GetValidName(dgvMain.Rows[index].Cells["NameTable1"], item.FirstFile.WorkSheet);
 
+                /// Заполнение второй части таблицы
                 dgvMain.Rows[index].Cells["NameColumn2"].Value = item.SecondFile.Name;
 
                 dgvMain.Rows[index].Cells["Range2"].Value = item.SecondFile.Column;
 
-                dgvMain.Rows[index].Cells["NameTable2"].Value = item.SecondFile.WorkSheet;
-
-                AddNameSheet(index);
+                /// Проверка аналогична первому DataGridViewComboBoxCell
+                dgvMain.Rows[index].Cells["NameTable2"].Value = GetValidName(dgvMain.Rows[index].Cells["NameTable2"], item.SecondFile.WorkSheet);
             }
+        }
+
+        private string GetValidName(object arg, string value)
+        {
+            return (arg as DataGridViewComboBoxCell).Items.Contains(value) ? value
+                : (arg as DataGridViewComboBoxCell).Items[(arg as DataGridViewComboBoxCell).Items.Count - 1].ToString();
         }
 
         private void AddDataRows()

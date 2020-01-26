@@ -2,114 +2,86 @@
 <ArrayOfExcelWorkModel xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <ExcelWorkModel>
     <FirstFile>
-      <FileName>C:\Users\mihas\Downloads\Test1.xlsx</FileName>
-      <Name>Банка</Name>
-      <Column>B30</Column>
-      <WorkSheet>банк-почта</WorkSheet>
+      <FileName>C:\Users\mihas\Downloads\Оперативная информация по дням расчетов потребителей тепловой энергии и ГВС.xls</FileName>
+      <Name>Банк ЕРЦ</Name>
+      <Column>C19</Column>
+      <WorkSheet>Лист1</WorkSheet>
     </FirstFile>
     <SecondFile>
       <FileName>C:\Users\mihas\Downloads\сверка донецк.xls</FileName>
-      <Name>Банк Донецк</Name>
+      <Name>Твоя</Name>
       <Column>B34</Column>
-      <WorkSheet>ноябрь 2019</WorkSheet>
+      <WorkSheet>декабрь 2019 </WorkSheet>
     </SecondFile>
   </ExcelWorkModel>
   <ExcelWorkModel>
     <FirstFile>
-      <FileName>C:\Users\mihas\Downloads\Test1.xlsx</FileName>
+      <FileName>C:\Users\mihas\Downloads\Оперативная информация по дням расчетов потребителей тепловой энергии и ГВС.xls</FileName>
       <Name>Почта</Name>
-      <Column>D30</Column>
-      <WorkSheet>банк-почта</WorkSheet>
+      <Column>E19</Column>
+      <WorkSheet>Лист1</WorkSheet>
     </FirstFile>
     <SecondFile>
       <FileName>C:\Users\mihas\Downloads\сверка донецк.xls</FileName>
-      <Name>Почта Донецк</Name>
+      <Name>Твоя</Name>
       <Column>C34</Column>
-      <WorkSheet>ноябрь 2019</WorkSheet>
+      <WorkSheet>декабрь 2019 </WorkSheet>
     </SecondFile>
   </ExcelWorkModel>
   <ExcelWorkModel>
     <FirstFile>
-      <FileName>C:\Users\mihas\Downloads\Test1.xlsx</FileName>
-      <Name>Итого</Name>
-      <Column>K29</Column>
-      <WorkSheet>ЗП-СО</WorkSheet>
+      <FileName>C:\Users\mihas\Downloads\Оперативная информация по дням расчетов потребителей тепловой энергии и ГВС.xls</FileName>
+      <Name>Касса</Name>
+      <Column>D19</Column>
+      <WorkSheet>Лист1</WorkSheet>
     </FirstFile>
     <SecondFile>
       <FileName>C:\Users\mihas\Downloads\сверка донецк.xls</FileName>
-      <Name>С/O Донецк</Name>
+      <Name>Твоя</Name>
+      <Column>D34</Column>
+      <WorkSheet>декабрь 2019 </WorkSheet>
+    </SecondFile>
+  </ExcelWorkModel>
+  <ExcelWorkModel>
+    <FirstFile>
+      <FileName>C:\Users\mihas\Downloads\Оперативная информация по дням расчетов потребителей тепловой энергии и ГВС.xls</FileName>
+      <Name>С/О</Name>
+      <Column>F19</Column>
+      <WorkSheet>Лист1</WorkSheet>
+    </FirstFile>
+    <SecondFile>
+      <FileName>C:\Users\mihas\Downloads\сверка донецк.xls</FileName>
+      <Name>Твоя</Name>
       <Column>E34</Column>
-      <WorkSheet>ноябрь 2019</WorkSheet>
+      <WorkSheet>декабрь 2019 </WorkSheet>
     </SecondFile>
   </ExcelWorkModel>
   <ExcelWorkModel>
     <FirstFile>
-      <FileName>C:\Users\mihas\Downloads\Test1.xlsx</FileName>
-      <Name>Сумма сч.100</Name>
-      <Column>B30</Column>
-      <WorkSheet>ЗП-СО</WorkSheet>
+      <FileName>C:\Users\mihas\Downloads\Оперативная информация по дням расчетов потребителей тепловой энергии и ГВС.xls</FileName>
+      <Name>З/П</Name>
+      <Column>G19</Column>
+      <WorkSheet>Лист1</WorkSheet>
     </FirstFile>
     <SecondFile>
       <FileName>C:\Users\mihas\Downloads\сверка донецк.xls</FileName>
-      <Name>Донецк</Name>
+      <Name>Твоя</Name>
       <Column>F34</Column>
-      <WorkSheet>ноябрь 2019</WorkSheet>
+      <WorkSheet>декабрь 2019 </WorkSheet>
     </SecondFile>
   </ExcelWorkModel>
   <ExcelWorkModel>
     <FirstFile>
-      <FileName>C:\Users\mihas\Downloads\Test1.xlsx</FileName>
-      <Name>Сумма сч.300</Name>
-      <Column>C30</Column>
-      <WorkSheet>ЗП-СО</WorkSheet>
+      <FileName>C:\Users\mihas\Downloads\Оперативная информация по дням расчетов потребителей тепловой энергии и ГВС.xls</FileName>
+      <Name>ИЛ</Name>
+      <Column>H19</Column>
+      <WorkSheet>Лист1</WorkSheet>
     </FirstFile>
     <SecondFile>
       <FileName>C:\Users\mihas\Downloads\сверка донецк.xls</FileName>
-      <Name>Донецк</Name>
-      <Column>F34</Column>
-      <WorkSheet>ноябрь 2019</WorkSheet>
-    </SecondFile>
-  </ExcelWorkModel>
-  <ExcelWorkModel>
-    <FirstFile>
-      <FileName>C:\Users\mihas\Downloads\Test1.xlsx</FileName>
-      <Name>Сумма И/лист</Name>
-      <Column>D30</Column>
-      <WorkSheet>ЗП-СО</WorkSheet>
-    </FirstFile>
-    <SecondFile>
-      <FileName>C:\Users\mihas\Downloads\сверка донецк.xls</FileName>
-      <Name>Донецк</Name>
+      <Name>Твоя</Name>
       <Column>G34</Column>
-      <WorkSheet>ноябрь 2019</WorkSheet>
-    </SecondFile>
-  </ExcelWorkModel>
-  <ExcelWorkModel>
-    <FirstFile>
-      <FileName>C:\Users\mihas\Downloads\Test1.xlsx</FileName>
-      <Name>Сумма и/л сч.400</Name>
-      <Column>E30</Column>
-      <WorkSheet>ЗП-СО</WorkSheet>
-    </FirstFile>
-    <SecondFile>
-      <FileName>C:\Users\mihas\Downloads\сверка донецк.xls</FileName>
-      <Name>Донецк</Name>
-      <Column>G34</Column>
-      <WorkSheet>ноябрь 2019</WorkSheet>
-    </SecondFile>
-  </ExcelWorkModel>
-  <ExcelWorkModel>
-    <FirstFile>
-      <FileName>C:\Users\mihas\Downloads\Test1.xlsx</FileName>
-      <Name>Сумма ПФ</Name>
-      <Column>H30</Column>
-      <WorkSheet>ЗП-СО</WorkSheet>
-    </FirstFile>
-    <SecondFile>
-      <FileName>C:\Users\mihas\Downloads\сверка донецк.xls</FileName>
-      <Name>Донецк</Name>
-      <Column>G34</Column>
-      <WorkSheet>ноябрь 2019</WorkSheet>
+      <WorkSheet>декабрь 2019 </WorkSheet>
     </SecondFile>
   </ExcelWorkModel>
 </ArrayOfExcelWorkModel>
